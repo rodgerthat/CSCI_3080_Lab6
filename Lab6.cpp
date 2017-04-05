@@ -19,6 +19,7 @@ int main()
 	int A[MAX_ROWS][MAX_COLS] = { 0 };
 	int numNodes = 0;
 	int leafNodesArray[MAX_ROWS];
+	int numLeafs = 0;
 	int i, j = 0;
 
     // get the number of nodes from the user
@@ -48,6 +49,19 @@ int main()
     }
     cout << endl;
 
+	// count the number of leaves
+    for (i = 0; i < numNodes; ++i) {
+		if (A[i][0] == 0 && A[i][1] == 0) {
+			leafNodesArray[numLeafs] = i + 1;
+			++numLeafs;
+		}
+    }
+
+	// output the leaves
+	cout << "The leaves are ";
+	for (i = 0; i < numLeafs; ++i) {
+		cout << leafNodesArray[i] << " ";
+	}
 
     return 0;
 }
