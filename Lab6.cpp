@@ -60,7 +60,11 @@ int main()
 	// output the leaves
 	cout << "The leaves are ";
 	for (i = 0; i < numLeafs; ++i) {
-		cout << leafNodesArray[i] << " ";
+		if (i == numLeafs - 1) {
+			cout << "and " << leafNodesArray[i];
+		} else {
+			cout << leafNodesArray[i] << ", ";
+		}
 	}
 
     return 0;
